@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block title %}
+halaman ubah
+{% endblock title %}
+
+
+{% block content %}
+    <form method="post" >
+    {% csrf_token %}
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                <h2>ubah {{siswa.nama}}</h2>
+                    {{form.as_p}}
+                    <button class="btn btn-primary" type="submit">ubah</button>   
+                </div>
+            </div>
+        </div>
+
+    </form>
+{% endblock content %}

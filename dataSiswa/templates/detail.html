@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block title %}   
+halaman detail
+{% endblock title %}
+
+{% block content %}
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{siswa.nama}}</h5>
+                        <p class="card-text">{{siswa.email}}<br>{{siswa.telepon}}<br>{{siswa.jurusan}}</p>
+                        <a href="/siswa/" class="card-link">kembali</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

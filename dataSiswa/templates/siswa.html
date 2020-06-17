@@ -1,0 +1,38 @@
+
+{% extends 'main.html' %}
+
+{% block title %}  
+    daftar siswa
+{% endblock title %}
+
+{% block content %}
+    
+    
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                <h1>daftar siswa</h1>
+                {% for message in messages %}
+        {% if message %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{message}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>  
+        {% endif %}
+    {% endfor %}
+    {% for siswa in siswa %}
+<ul class="list-group">
+  <li class="list-group-item disabled">{{siswa.nama}}
+    <a href="{% url 'hapus_siswa' siswa.id %}" class="badge badge-danger badge-pill float-right ml-2">hapus</a>
+    <a href="{% url 'ubah_siswa' siswa.id %}" class="badge badge-primary badge-pill float-right ml-2">ubah</a>
+    <a href="{% url 'detail_siswa' siswa.id %}" class="badge badge-info badge-pill float-right ml-2">detail</a>
+  </li>
+</ul>
+    {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block title %}
+halaman tambah
+{% endblock title %}
+
+
+{% block content %}
+    <form method="post" >
+    {% csrf_token %}
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                <h2>tambah data</h2>
+                    {{form.as_p}}
+                    <button class="btn btn-primary" type="submit">tambah</button>   
+                </div>
+            </div>
+        </div>
+
+    </form>
+{% endblock content %}
