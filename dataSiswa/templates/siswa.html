@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-md-6">
                 <h1>daftar siswa</h1>
-                <a class="btn btn-primary mb-3" href="siswa/tambah/">tambah siswa</a>
+                <a class="btn btn-primary mb-3" href="{% url 'tambah_siswa' %}">tambah siswa</a>
                 {% for message in messages %}
         {% if message %}
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -36,4 +36,5 @@
                 </div>
             </div>
         </div>
+        
 {% endblock content %}
