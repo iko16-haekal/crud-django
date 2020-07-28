@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block title %}  
+    login
+{% endblock title %}
+{% block content %} 
+
+    {% if not user.is_authenticated %}
+        <div class="container ">
+        <div style="height: 90vh; display:flex; align-items: center;" class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                    login
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                        {% csrf_token %}
+                        <div class="container">
+                            {{ form.as_p }}
+                            <button class="btn btn-primary">login</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <meta http-equiv="refresh" content="0; url={% url 'siswa' %}">
+    {% endif %}
+
+{% endblock content %}
